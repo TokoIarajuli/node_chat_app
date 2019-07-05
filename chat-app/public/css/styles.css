@@ -108,7 +108,6 @@ button:disabled {
   color: white;
   background: #333744;
   width: 225px;
-  overflow-y: scroll;
 }
 
 /* Chat styles */
@@ -190,6 +189,7 @@ button:disabled {
 /* Chat Sidebar Styles */
 
 .room-title {
+  font-family: "Courier New", Courier, monospace;
   font-weight: 400;
   font-size: 22px;
   background: #2c2f3a;
