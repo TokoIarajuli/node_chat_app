@@ -35,10 +35,10 @@ io.on("connection", socket => {
 
     socket.join(user.room);
 
-    socket.emit("message", generateMessage("Tet", "სალამი ძმი"));
+    socket.emit("message", generateMessage("Tet", "Welcome"));
     socket.broadcast
       .to(user.room)
-      .emit("message", generateMessage("Tet", `${user.username} შემოგვიერთდა`));
+      .emit("message", generateMessage("Tet", `${user.username} Joined Us!`));
 
     io.to(user.room).emit("roomData", {
       room: user.room,
@@ -53,7 +53,7 @@ io.on("connection", socket => {
     const filter = new Filter();
 
     if (filter.isProfane(message)) {
-      return callback("ცუდ სიტყვებს არ ვართ ძმი");
+      return callback("No Cursing!");
     }
 
     io.to(user.room).emit("message", generateMessage(user.username, message));
@@ -78,7 +78,7 @@ io.on("connection", socket => {
     if (user) {
       io.to(user.room).emit(
         "message",
-        generateMessage("Tet", `${user.username} წავიდა (｡•́︿•̀｡)`)
+        generateMessage("Tet", `${user.username} Has Left (｡•́︿•̀｡)`)
       );
       io.to(user.room).emit("roomData", {
         room: user.room,

@@ -19,10 +19,10 @@
               required
               autocomplete="off"
             />
-            <button>გაგზავნა</button>
+            <button>Send</button>
           </form>
 
-          <button id="send-location">ადგილმდებარეობა</button>
+          <button id="send-location">My Location</button>
         </div>
       </div>
     </div>
@@ -43,13 +43,13 @@
             <span class="message__name">{{username}}</span>
             <span class="message__meta">{{createdAt}}</span>
         </p>
-        <p><a href="{{url}}" target="_blank">ახლა აქ ვარ</a></p>
+        <p><a href="{{url}}" target="_blank">I'm  Here</a></p>
       </div>
     </script>
 
     <script id="sidebar-template" type="text/html">
       <h2 class="room-title">{{room}}</h2>
-      <h3 class="list-title">აქტიური ხალხი</h3>
+      <h3 class="list-title">Active Users</h3>
       <ul class="users">
         {{#users}}
           <li>{{username}}</li>
